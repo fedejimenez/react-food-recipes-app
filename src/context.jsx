@@ -7,12 +7,11 @@ const allMealsUrl = 'https://www.themealdb.com/api/json/v1/1/search.php?s='
 const randomMealUrl = 'https://www.themealdb.com/api/json/v1/1/random.php'
 
 const getFavoritesFromLocalStorage = () => {
-	let favorites = localStorage.getItem('favorites');
-
-	if (favorites) {
-		return JSON.parse(localStorage.getItem('favorites'))
-	}
-	return favorites
+  let favorites = []
+  if (localStorage.getItem('favorites')) {
+    favorites = JSON.parse(localStorage.getItem('favorites'))
+  }
+  return favorites
 }
 
 const AppProvider = ({ children }) => {
